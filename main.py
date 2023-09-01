@@ -84,7 +84,7 @@ def gradient_descent(X, Y, alpha, iterations):
             print(get_accuracy(predictions, Y))
     return W1, b1, W2, b2
 
-W1, b1, W2, b2 = gradient_descent(X_train, Y_train, 0.10, 500) #runs the model and tells you accuracy
+W1, b1, W2, b2 = gradient_descent(X_train, Y_train, 0.10, 500) #runs the training
 
 def make_predictions(X, W1, b1, W2, b2):
     _, _, _, A2 = forward_prop(W1, b1, W2, b2, X)
@@ -103,5 +103,5 @@ def test_prediction(index, W1, b1, W2, b2):
     plt.imshow(current_image, interpolation='nearest')
     plt.show()
 
-dev_predictions = make_predictions(X_dev, W1, b1, W2, b2)
-get_accuracy(dev_predictions, Y_dev)
+dev_predictions = make_predictions(X_dev, W1, b1, W2, b2) #runs the predictions
+get_accuracy(dev_predictions, Y_dev) #tells you accuracy
